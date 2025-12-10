@@ -5,9 +5,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.septemberfood.databinding.ItemProductBinding
 import com.septemberfood.model.Product
+import com.septemberfood.util.ImageLoader
 
 class ProductAdapter(
     private val onItemClick: (Product) -> Unit,
@@ -34,12 +34,7 @@ class ProductAdapter(
             binding.tvProductName.text = product.name
             binding.tvPrice.text = "${product.price.toInt()} VNĐ"
             
-            if (product.imageUrl.isNotEmpty()) {
-                Glide.with(binding.root.context)
-                    .load(product.imageUrl)
-                    .placeholder(com.septemberfood.R.drawable.ic_placeholder)
-                    .into(binding.ivProductImage)
-            }
+            ImageLoader.loadImage(binding.ivProductImage, product.imageUrl)
             
             binding.root.setOnClickListener {
                 onItemClick(product)

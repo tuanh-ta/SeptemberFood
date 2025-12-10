@@ -5,11 +5,10 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
-import com.bumptech.glide.Glide
-import com.septemberfood.R
 import com.septemberfood.controller.CartController
 import com.septemberfood.controller.ProductController
 import com.septemberfood.databinding.ActivityProductDetailBinding
+import com.septemberfood.util.ImageLoader
 import kotlinx.coroutines.launch
 
 class ProductDetailActivity : AppCompatActivity() {
@@ -55,12 +54,7 @@ class ProductDetailActivity : AppCompatActivity() {
                 binding.tvDescription.text = product.description
                 binding.tvStock.text = "Tồn kho: ${product.stock}"
                 
-                if (product.imageUrl.isNotEmpty()) {
-                    Glide.with(this@ProductDetailActivity)
-                        .load(product.imageUrl)
-                        .placeholder(R.drawable.ic_placeholder)
-                        .into(binding.ivProductImage)
-                }
+                ImageLoader.loadImage(binding.ivProductImage, product.imageUrl)
             }
         }
     }

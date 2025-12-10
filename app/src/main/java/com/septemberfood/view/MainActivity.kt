@@ -8,7 +8,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import com.septemberfood.controller.UserController
 import com.septemberfood.databinding.ActivityMainBinding
-import com.septemberfood.view.admin.AdminActivity
 import com.septemberfood.view.customer.ProductListActivity
 import kotlinx.coroutines.launch
 
@@ -50,11 +49,8 @@ class MainActivity : AppCompatActivity() {
                     // Lưu thông tin user vào session
                     com.septemberfood.util.UserSession.saveUser(this@MainActivity, user)
                     
-                    if (user.role == "Admin") {
-                        startActivity(Intent(this@MainActivity, AdminActivity::class.java))
-                    } else {
-                        startActivity(Intent(this@MainActivity, ProductListActivity::class.java))
-                    }
+                    // Tất cả user đăng nhập đều vào ProductListActivity
+                    startActivity(Intent(this@MainActivity, ProductListActivity::class.java))
                     finish()
                 } else {
                     Toast.makeText(this@MainActivity, "Sai tên đăng nhập hoặc mật khẩu", Toast.LENGTH_SHORT).show()

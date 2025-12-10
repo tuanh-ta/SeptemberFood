@@ -44,7 +44,7 @@ class ProfileActivity : AppCompatActivity() {
             binding.tvName.text = user.name.ifEmpty { "Chưa cập nhật" }
             binding.tvEmail.text = user.email.ifEmpty { "Chưa cập nhật" }
             binding.tvPhone.text = user.phone.ifEmpty { "Chưa cập nhật" }
-            binding.tvRole.text = if (user.role == "Admin") "Quản trị viên" else "Khách hàng"
+            binding.tvRole.text = "Khách hàng"
         } else {
             Toast.makeText(this, "Chưa đăng nhập", Toast.LENGTH_SHORT).show()
             finish()

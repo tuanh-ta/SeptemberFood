@@ -5,10 +5,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.septemberfood.databinding.ItemCartBinding
 import com.septemberfood.model.CartItem
 import com.septemberfood.model.Product
+import com.septemberfood.util.ImageLoader
 
 class CartAdapter(
     private val onQuantityChange: (CartItem, Int) -> Unit,
@@ -39,12 +39,7 @@ class CartAdapter(
             binding.tvQuantity.text = cartItem.quantity.toString()
             binding.tvSubtotal.text = "${(product.price * cartItem.quantity).toInt()} VNĐ"
             
-            if (product.imageUrl.isNotEmpty()) {
-                Glide.with(binding.root.context)
-                    .load(product.imageUrl)
-                    .placeholder(com.septemberfood.R.drawable.ic_placeholder)
-                    .into(binding.ivProductImage)
-            }
+            ImageLoader.loadImage(binding.ivProductImage, product.imageUrl)
             
             binding.btnIncrease.setOnClickListener {
                 onQuantityChange(cartItem, cartItem.quantity + 1)

@@ -19,10 +19,6 @@
     <string name="customer_address">Địa chỉ</string>
     <string name="payment_method">Phương thức thanh toán</string>
     <string name="cash">Tiền mặt</string>
-    <string name="admin">Quản lý</string>
-    <string name="add_product">Thêm sản phẩm</string>
-    <string name="edit_product">Sửa sản phẩm</string>
-    <string name="delete_product">Xóa sản phẩm</string>
     <string name="product_code">Mã sản phẩm</string>
     <string name="product_name">Tên sản phẩm</string>
     <string name="description">Mô tả</string>

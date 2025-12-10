@@ -21,6 +21,9 @@ interface ProductDao {
     @Query("SELECT * FROM products WHERE id = :id")
     suspend fun getProductById(id: Long): Product?
     
+    @Query("SELECT * FROM products WHERE productCode = :productCode")
+    suspend fun getProductByCode(productCode: String): Product?
+    
     @Query("SELECT COUNT(*) FROM products")
     suspend fun getProductCount(): Int
     

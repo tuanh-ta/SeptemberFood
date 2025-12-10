@@ -17,12 +17,6 @@
 - ✅ Đăng nhập/Đăng xuất
 - ✅ Xem thông tin tài khoản
 
-### Chức năng Admin:
-- ✅ Xem danh sách sản phẩm
-- ✅ Thêm sản phẩm mới (hình ảnh, mã SP, tên SP, mô tả, giá, tồn kho)
-- ✅ Sửa thông tin sản phẩm
-- ✅ Xóa sản phẩm
-
 ## Cấu trúc dự án
 
 Dự án tuân theo kiến trúc MVC:
@@ -39,7 +33,6 @@ app/src/main/java/com/septemberfood/
 │   │   ├── CartActivity           # Trang giỏ hàng
 │   │   ├── CheckoutActivity       # Trang thanh toán
 │   │   └── ProfileActivity        # Trang thông tin tài khoản
-│   ├── admin/      # Activities cho admin
 │   └── adapter/    # RecyclerView Adapters
 ├── MainActivity    # Activity đăng nhập/đăng ký
 └── util/           # Utilities (UserSession)
@@ -195,10 +188,6 @@ SeptemberFood/
 
 ## Tài khoản mặc định
 
-### Admin:
-- Username: `admin`
-- Password: `admin123`
-
 ### Customer:
 - Username: `customer`
 - Password: `customer123`
@@ -263,7 +252,7 @@ SeptemberFood/
 - id (Primary Key)
 - username (Tên đăng nhập)
 - password (Mật khẩu)
-- role (Vai trò: Customer/Admin)
+- role (Vai trò: Customer)
 - name (Tên)
 - email (Email)
 - phone (Số điện thoại)
@@ -292,15 +281,6 @@ SeptemberFood/
 - **Xem thông tin:** Nhấn icon profile → "Thông tin tài khoản"
 - **Đăng xuất:** Nhấn icon profile → "Đăng xuất"
 
-### Cho Admin:
-1. **Đăng nhập:** Từ menu profile, chọn "Đăng nhập" và đăng nhập với tài khoản admin
-2. **Xem danh sách sản phẩm:** Sau khi đăng nhập, bạn sẽ được chuyển đến trang quản lý sản phẩm
-3. **Thêm sản phẩm:** Nhấn nút "+" (FloatingActionButton) để thêm sản phẩm mới
-4. **Điền thông tin:** Nhập đầy đủ thông tin sản phẩm (mã SP, tên, mô tả, giá, URL hình ảnh, danh mục, tồn kho)
-5. **Sửa sản phẩm:** Nhấn "Sửa" trên card sản phẩm để chỉnh sửa
-6. **Xóa sản phẩm:** Nhấn "Xóa" trên card sản phẩm để xóa
-7. **Quản lý tài khoản:** Sử dụng menu profile để xem thông tin hoặc đăng xuất
-
 ## Tính năng UI/UX
 
 - **Custom Toolbar:** Tất cả các trang đều có toolbar tùy chỉnh với nút back, tiêu đề, và các icon chức năng
@@ -317,7 +297,7 @@ SeptemberFood/
   - Sử dụng URL từ các dịch vụ như Unsplash, Pexels
   - Lưu hình ảnh trong thư mục `res/drawable` và sử dụng `@drawable/image_name`
   - Lưu hình ảnh trong thư mục `assets` và load bằng AssetManager
-- Dữ liệu mẫu (sản phẩm, tài khoản admin/customer) được tự động tạo khi lần đầu mở ứng dụng
+- Dữ liệu mẫu (sản phẩm, tài khoản customer) được tự động tạo khi lần đầu mở ứng dụng
 - Session được lưu trong SharedPreferences, vì vậy người dùng sẽ vẫn đăng nhập sau khi đóng và mở lại ứng dụng
 
 ## Giấy phép

@@ -21,10 +21,6 @@
             android:name=".view.MainActivity"
             android:exported="true"
             android:theme="@style/Theme.SeptemberFood.NoActionBar" />
-        
-        <activity
-            android:name=".view.admin.AdminActivity"
-            android:exported="false" />
             
         <activity
             android:name=".view.customer.ProductListActivity"

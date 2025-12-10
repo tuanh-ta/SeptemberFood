@@ -66,19 +66,6 @@ class UserController(application: Application) : AndroidViewModel(application) {
     
     fun initializeDefaultUsers() {
         viewModelScope.launch {
-            // Check if admin exists
-            val admin = userDao.getUserByUsername("admin")
-            if (admin == null) {
-                userDao.insertUser(
-                    User(
-                        username = "admin",
-                        password = "admin123",
-                        role = "Admin",
-                        name = "Administrator"
-                    )
-                )
-            }
-            
             // Check if default customer exists
             val customer = userDao.getUserByUsername("customer")
             if (customer == null) {

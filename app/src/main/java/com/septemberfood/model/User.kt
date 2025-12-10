@@ -9,7 +9,7 @@ data class User(
     val id: Long = 0,
     val username: String,
     val password: String,
-    val role: String = "Customer", // Customer, Admin
+    val role: String = "Customer"
     val name: String = "",
     val email: String = "",
     val phone: String = ""
